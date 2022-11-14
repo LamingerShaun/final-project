@@ -95,3 +95,14 @@ input[type="button"]:hover {
 .not-valid {
     border-color: var(--not-valid-color);
 }
+
+@media (max-width: 550px) {
+    #columns {
+        flex-direction: column;
+        gap: 30px;
+    }
+
+    #contact-info, form {
+        width: 100%;
+    }
+}
