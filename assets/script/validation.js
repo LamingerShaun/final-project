@@ -24,19 +24,20 @@ function process(field, condition) {
 }
 
 function validate() {
-    let isValid = true;
+    let count = 0;
 
     for (let i = 0; i < textFields.length; i++) {
         let field = textFields[i];
         let val = field.value.trim();
 
-        isValid = process(field, val.length == 0);
+        if (!process(field, val.length == 0) ||
+            (field.getAttribute("type") == "email" && !process(field, !emailRegex.test(val)))) {
 
-        if (field.getAttribute("type") == "email")
-            isValid = process(field, !emailRegex.test(val));
+            count++;
+        }
     }
 
-    if (isValid) {
+    if (count == 0) {
         for (let i = 0; i < textFields.length; i++)
             textFields[i].value = "";
 
