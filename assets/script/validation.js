@@ -1,43 +1,58 @@
 "use strict";
 
-const nameInput = document.getElementById("input-name");
+const validMessage = document.getElementById("validation-message");
+const firstNameInput = document.getElementById("input-name");
+const lastNameInput = document.getElementById("input-ls-name");
 const emailInput = document.getElementById("input-email");
 const messageInput = document.querySelector("textarea");
-const submitBtn = document.querySelector("input[value='Submit']")
+const submitBtn = document.querySelector("input[value='Submit']");
+
+const textFields = [firstNameInput, lastNameInput, emailInput, messageInput];
 
 const emailRegex = /^(?=^.{8,}$)[-_A-Za-z0-9]+([_.-][a-zA-Z0-9]+)*@[A-Za-z0-9]+([.-][a-zA-Z0-9]+)*\.[A-Za-z]{2,}$/;
 
+function process(field, condition) {
+    if (condition) {
+        field.classList.add("not-valid");
+        return false;
+    }
+
+    if (field.classList.contains("not-valid"))
+        field.classList.remove("not-valid");
+
+    return true;
+}
+
 function validate() {
-    let name = nameInput.value.trim();
-    let email = emailInput.value.trim();
-    let message = messageInput.value.trim();
+    let count = 0;
 
-    if (name.length == 0) {
-        nameInput.classList.add("not-valid");
-        return;
-    } else if (nameInput.classList.contains("not-valid")) {
-        nameInput.classList.remove("not-valid");
+    for (let i = 0; i < textFields.length; i++) {
+        let field = textFields[i];
+        let val = field.value.trim();
+
+        if (!process(field, val.length == 0) ||
+            (field.getAttribute("type") == "email" && !process(field, !emailRegex.test(val)))) {
+
+            count++;
+        }
     }
 
-    if (email.length == 0 || !emailRegex.test(email)) {
-        emailInput.classList.add("not-valid");
-        return;
-    } else if (emailInput.classList.contains("not-valid")) {
-        emailInput.classList.remove("not-valid");
+    if (count == 0) {
+        for (let i = 0; i < textFields.length; i++)
+            textFields[i].value = "";
+
+        validMessage.innerText = "Successfully submitted";
+        validMessage.classList.add("valid");
+
+        if (validMessage.classList.contains("not-valid"))
+            validMessage.classList.remove("not-valid");
+    } else {
+        validMessage.innerText = "Please make sure all fields are correct";
+        validMessage.classList.add("not-valid");
+
+        if (validMessage.classList.contains("valid"))
+            validMessage.classList.remove("valid");
     }
-
-    if (message.length == 0) {
-        messageInput.classList.add("not-valid");
-        return;
-    } else if (messageInput.classList.contains("not-valid")) {
-        messageInput.classList.remove("not-valid");
-    }
-
-    nameInput.value = "";
-    emailInput.value = "";
-    messageInput.value = "";
-
-    location.reload();
 }
 
 submitBtn.addEventListener("mousedown", validate);
