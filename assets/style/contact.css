@@ -1,5 +1,9 @@
 @import "reset.css";
 
+:root {
+    --not-valid-color: #ff4747;
+}
+
 .container {
     display: flex;
     flex-direction: column;
@@ -33,6 +37,23 @@ form {
     flex-direction: column;
     gap: 10px;
     width: 60%;
+}
+
+#validation-message {
+    display: none;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#validation-message.valid {
+    display: block;
+    background-color: #81ff89;
+}
+
+#validation-message.not-valid {
+    display: block;
+    background-color: var(--not-valid-color);
 }
 
 input, textarea {
@@ -72,5 +93,5 @@ input[type="button"]:hover {
 }
 
 .not-valid {
-    border-color: #ff2929;
+    border-color: var(--not-valid-color);
 }
