@@ -4,21 +4,35 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: min(100%, 400px);
+    width: min(100%, 600px);
+    padding-inline: 30px;
     height: 100vh;
     margin-inline: auto;
 }
 
 h2 {
     font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#columns {
+    display: flex;
+    width: 100%;
+}
+
+#contact-info {
+    width: 40%;
+}
+
+#contact-info p+p {
+    margin-top: 10px;
 }
 
 form {
     display: flex;
     flex-direction: column;
     gap: 10px;
-    width: 100%;
-    margin-top: 20px;
+    width: 60%;
 }
 
 input, textarea {
@@ -26,6 +40,15 @@ input, textarea {
     padding: 10px;
     border: 1px solid rgb(0 0 0 / 0.5);
     border-radius: 10px;
+}
+
+#name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+#name-fields input {
+    width: 50%;
 }
 
 input {
@@ -37,7 +60,6 @@ textarea {
 }
 
 input[type="button"] {
-    width: 200px;
     border: none;
     background-color: #168eff;
     color: #fff;
