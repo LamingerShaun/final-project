@@ -30,3 +30,16 @@ input {
 textarea {
     height: 200px;
 }
+
+input[type="button"] {
+    width: 200px;
+    border: none;
+    background-color: #168eff;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+input[type="button"]:hover {
+    background-color: #005eb6;
+}
