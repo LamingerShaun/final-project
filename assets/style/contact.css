@@ -1,1 +1,97 @@
 @import "reset.css";
+
+:root {
+    --not-valid-color: #ff4747;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: min(100%, 600px);
+    padding-inline: 30px;
+    height: 100vh;
+    margin-inline: auto;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+#columns {
+    display: flex;
+    width: 100%;
+}
+
+#contact-info {
+    width: 40%;
+}
+
+#contact-info p+p {
+    margin-top: 10px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 60%;
+}
+
+#validation-message {
+    display: none;
+    padding: 5px;
+    border-radius: 10px;
+    color: #fff;
+}
+
+#validation-message.valid {
+    display: block;
+    background-color: #81ff89;
+}
+
+#validation-message.not-valid {
+    display: block;
+    background-color: var(--not-valid-color);
+}
+
+input, textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgb(0 0 0 / 0.5);
+    border-radius: 10px;
+}
+
+#name-fields {
+    display: flex;
+    gap: 10px;
+}
+
+#name-fields input {
+    width: 50%;
+}
+
+input {
+    height: 50px;
+}
+
+textarea {
+    height: 200px;
+}
+
+input[type="button"] {
+    border: none;
+    background-color: #168eff;
+    color: #fff;
+    text-align: center;
+    transition: background-color 0.2s;
+}
+
+input[type="button"]:hover {
+    background-color: #005eb6;
+}
+
+.not-valid {
+    border-color: var(--not-valid-color);
+}

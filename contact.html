@@ -9,11 +9,35 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
-    <link rel="stylesheet" href="assets/style/index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    <link rel="stylesheet" href="assets/style/contact.css">
+    <script src="assets/script/validation.js" defer></script>
 </head>
 
 <body>
-
+    <main>
+        <div class="container">
+            <h2>Contact Us</h2>
+            <div id="columns">
+                <div id="contact-info">
+                    <p><i class="fa-solid fa-phone"></i> (204) 420-1337</p>
+                    <p><i class="fa-solid fa-envelope"></i> support@mittprotect.com</p>
+                    <p><i class="fa-solid fa-location-dot"></i> 130 Henlow Bay</p>
+                </div>
+                <form novalidate>
+                    <p>All fields are required</p>
+                    <p id="validation-message"></p>
+                    <div id="name-fields">
+                        <input type="text" id="input-name" placeholder="First Name" required>
+                        <input type="text" id="input-ls-name" placeholder="Last Name" required>
+                    </div>
+                    <input type="email" id="input-email" placeholder="example@email.com" required>
+                    <textarea placeholder="Enter message" required></textarea>
+                    <input type="button" value="Submit">
+                </form>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>
