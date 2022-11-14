@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="assets/style/contact.css">
+    <script src="assets/script/validation.js" defer></script>
 </head>
 
 <body>
@@ -17,7 +18,8 @@
         <div class="container">
             <h2>Contact Us</h2>
             <p>All fields are required</p>
-            <form>
+
+            <form novalidate>
                 <input type="text" id="input-name" placeholder="John Smith" required>
                 <input type="email" id="input-email" placeholder="example@email.com" required>
                 <textarea placeholder="Enter message" required></textarea>

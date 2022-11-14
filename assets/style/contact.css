@@ -48,3 +48,7 @@ input[type="button"] {
 input[type="button"]:hover {
     background-color: #005eb6;
 }
+
+.not-valid {
+    border-color: #ff2929;
+}
