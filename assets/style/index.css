@@ -1,3 +1,33 @@
 @import "reset.css";
 
 :root {
+    --app-blue: #5c72e2;
+    --app-pink: #e25c72;
+    --app-pink-2: #c0203b;
+}
+
+body {
+    background-color: #fff;
+    font-family: "Inter", Arial, sans-serif;
+}
+
+header {
+    height: 56px;
+    background-color: var(--app-blue);
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+.flexbox {
+    display: flex;
+}
+
+.title {
+    width: 30%;
+    height: 56px;
+    background-color: transparent;
+}
+
