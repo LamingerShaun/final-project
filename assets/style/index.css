@@ -297,3 +297,45 @@ footer .copyright {
     font-family: "Inter", sans-serif;
     color: #1a1a1a
 }
+
+/*---------------------------*/
+/*     Media Queries         */
+/*---------------------------*/
+
+
+@media (max-width: 1080px) {
+    .bars {
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .one, .two, .three, .four {
+        width: calc(50% - 10px);
+    }
+
+    .hero-image {
+        height: 400px;
+    }
+}
+@media (max-width: 480px) {
+    section {
+        min-height: calc(100vh - -350px - 112px);
+    }
+
+        .column {
+        width: 100%;
+        margin-top: px;
+    }
+    .hero-image {
+    height: 100px;
+    }
+
+    .hero-text {
+        font-size: 16px;
+    }
+
+    .hero-text button {
+        display: none;
+    }
+}
