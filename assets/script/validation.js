@@ -23,6 +23,14 @@ function process(field, condition) {
     return true;
 }
 
+function updateMessage(message, addClass, removeClass) {
+    validMessage.innerText = message;
+    validMessage.classList.add(addClass);
+
+    if (validMessage.classList.contains(removeClass))
+        validMessage.classList.remove(removeClass);
+}
+
 function validate() {
     let count = 0;
 
@@ -41,17 +49,9 @@ function validate() {
         for (let i = 0; i < textFields.length; i++)
             textFields[i].value = "";
 
-        validMessage.innerText = "Successfully submitted";
-        validMessage.classList.add("valid");
-
-        if (validMessage.classList.contains("not-valid"))
-            validMessage.classList.remove("not-valid");
+        updateMessage("Successfully submitted", "valid", "not-valid");
     } else {
-        validMessage.innerText = "Please make sure all fields are correct";
-        validMessage.classList.add("not-valid");
-
-        if (validMessage.classList.contains("valid"))
-            validMessage.classList.remove("valid");
+        updateMessage("Please make sure all fields are correct", "not-valid", "valid");
     }
 }
 
